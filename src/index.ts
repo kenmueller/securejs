@@ -5,13 +5,12 @@ export function makeId(length: number, each: (index: number) => any): string {
 }
 
 export function newId(length: number, type?: ID): string {
-	const array = range(length)
 	switch (type) {
 	case undefined:
 	case 'any':
-		return array.map(_i => (~~(Math.random() * 36)).toString(36)).join('')
+		return makeId(length, () => (~~(Math.random() * 36)).toString(36))
 	case 'number':
-		// return array.map(() => '')
+		return makeId(length, () => ~~(Math.random() * 10))
 	case 'string':
 		// return range(length) Math.random().toString(36).substring(length)
 	default:
