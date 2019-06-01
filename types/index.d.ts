@@ -10,6 +10,6 @@ export function makeId(length: number, each: (index: number) => any): string
 /**
  * Creates a new ID with the specified length and type
  * @param length The length of the new ID
- * @param type Default is 'any'. Can be 'any': numbers and letters, 'number': just numbers, 'string': just letters
+ * @param type Default is "any". Can be "any": numbers and letters, "number": just numbers, "string": just letters
  */
 export function newId(length: number, type?: ID): string
