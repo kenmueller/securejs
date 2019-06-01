@@ -14,7 +14,7 @@ export function newId(length: number, type?: ID): string {
 	case 'string':
 		// return range(length) Math.random().toString(36).substring(length)
 	default:
-		return ''
+		return makeId(length, () => 0)
 	}
 }
 
