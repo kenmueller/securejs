@@ -2,9 +2,10 @@
 	"name": "securejs",
 	"version": "1.0.0",
 	"description": "Secure IDs, Encryption, you name it",
-	"main": "index.js",
+	"main": "lib/index.js",
+	"types": "types/index.d.ts",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"start": "tsc"
 	},
 	"repository": {
 		"type": "git",
@@ -18,5 +19,8 @@
 	"bugs": {
 		"url": "https://github.com/kenmueller/securejs/issues"
 	},
-	"homepage": "https://github.com/kenmueller/securejs#readme"
+	"homepage": "https://github.com/kenmueller/securejs#readme",
+	"dependencies": {
+		"typescript": "^3.5.1"
+	}
 }
