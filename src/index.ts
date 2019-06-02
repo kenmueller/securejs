@@ -1,10 +1,12 @@
 import { ID, SecureOptions } from '../types'
 
 export function makeId(length: number, each: (index: number) => any): string {
+	checkLength(length)
 	return range(length).map(each).join('')
 }
 
 export function newId(length: number, type?: ID, options?: SecureOptions): string {
+	checkLength(length)
 	const letters = lettersForCase((options || {}).case)
 	switch (type) {
 	case 'number':
@@ -15,6 +17,11 @@ export function newId(length: number, type?: ID, options?: SecureOptions): strin
 		const all = letters.concat('0123456789')
 		return makeId(length, () => all.charAt(random(all.length)))
 	}
+}
+
+function checkLength(length: number) {
+	if (length < 0)
+		throw new Error('Length cannot be negative')
 }
 
 function lettersForCase(letterCase: string | undefined): string {
