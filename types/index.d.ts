@@ -44,7 +44,7 @@ export function encrypt(text: string, key: string): string
 
 /**
  * Decrypts encrypted text with a key
- * @param text What you want to decrypt
- * @param key The encryption key
+ * @param text The encrypted text you want to decrypt
+ * @param key The encryption key (the key you encrypted the original text with)
  */
 export function decrypt(text: string, key: string): string
