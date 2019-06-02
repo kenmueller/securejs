@@ -1,3 +1,4 @@
+import CryptoJS from 'crypto-js'
 import { ID, SecureOptions } from '../types'
 
 export function makeId(length: number, each: (index: number) => any): string {
@@ -17,6 +18,14 @@ export function newId(length: number, type?: ID, options?: SecureOptions): strin
 		const all = letters.concat('0123456789')
 		return makeId(length, () => all.charAt(random(all.length)))
 	}
+}
+
+export function encrypt(text: string, key: string): string {
+	return CryptoJS.AES.encrypt(text, key).toString()
+}
+
+export function decrypt(text: string, key: string): string {
+	return CryptoJS.AES.decrypt(text, key).toString(CryptoJS.enc.Utf8)
 }
 
 function checkLength(length: number) {
