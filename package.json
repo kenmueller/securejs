@@ -23,6 +23,8 @@
 		"decrypt",
 		"encryption",
 		"decryption",
+		"util",
+		"modules",
 		"generate",
 		"javascript",
 		"npm",
