@@ -1,6 +1,6 @@
 {
 	"name": "securejs",
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"description": "Easily create secure IDs, passwords, and encrypt/decrypt anything",
 	"main": "lib/index.js",
 	"types": "types/index.d.ts",
