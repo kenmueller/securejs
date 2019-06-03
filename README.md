@@ -68,44 +68,74 @@ secure.decrypt('U2FsdGVkX1/IdEzGVRJ2NvQeVSImQrda0d4ucwpolRa4o7WPdspqxHWdz39Mz32G
 
 # Documentation
 
+## `SecureOptions`
+
+### `case`
+
+**`uppercase`**: Make all the letters upppercase
+
+**`lowercase`**: Make all the letters lowercase
+
+**`any`** (default): Randomize the capitalization
+
 ```typescript
 interface SecureOptions {
-    // Letter capitalization
-    // `uppercase`: Make all the letters upppercase
-    // `lowercase`: Make all the letters lowercase
-    // `any` (default): Randomize the capitalization
     case: 'uppercase' or 'lowercase' or 'any' (default)
 }
 ```
 
+## `makeId`
+
+**Creates a new ID with the specified character generation function**
+
+**`length`**: The length of the new ID
+
+**`each`**: The character generation function. Takes in the index of the character, and returns a new character determined by the function
+
 ```typescript
-// Creates a new ID with the specified character generation function
-// length: The length of the new ID
-// each: The character generation function. Takes in the index of the character, and returns a new character determined by the function
 function makeId(length: number, each: (index: number) => any): string
 ```
 
+## `newId`
+
+**Creates a new ID with the specified length, type, and options**
+
+**`length`**: The length of the new ID
+
+**`type`**: default is `"any"`
+
+**`if type = "any"`** or left blank: numbers and letters
+
+**`if type = "number"`**: just numbers
+
+**`if type = "string"`**: just letters
+
+**`options`** (type **[SecureOptions](#secureoptions)**): To further customize the ID creation. Must explicitly specify the **`type`** if you want to add options
+
 ```typescript
-// Creates a new ID with the specified length, type, and options
-// length: The length of the new ID
-// type: default is "any"
-// type = "any": numbers and letters
-// type = "number": just numbers
-// type = "string": just letters
-// options: To further customize the ID creation. Must explicitly specify the type if you want to add options
 function newId(length: number, type?: 'any' or 'number' or 'string', options?: SecureOptions): string
 ```
 
+## `encrypt`
+
+**Encrypts text with a key**
+
+**`text`**: What you want to encrypt
+
+**`key`**: The encryption key
+
 ```typescript
-// Encrypts text with a key
-// text: What you want to encrypt
-// key: The encryption key
 function encrypt(text: string, key: string): string
 ```
 
+## `decrypt`
+
+**Decrypts encrypted text with a key**
+
+**`text`**: The encrypted text you want to decrypt
+
+**`key`**: The encryption key (the key you encrypted the original text with)
+
 ```typescript
-// Decrypts encrypted text with a key
-// text: The encrypted text you want to decrypt
-// key: The encryption key (the key you encrypted the original text with)
 function decrypt(text: string, key: string): string
 ```

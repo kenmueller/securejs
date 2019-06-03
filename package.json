@@ -1,7 +1,7 @@
 {
 	"name": "securejs",
-	"version": "1.1.0",
-	"description": "Secure IDs, Encryption, you name it",
+	"version": "1.1.1",
+	"description": "Easily create secure IDs, passwords, and encrypt/decrypt anything",
 	"main": "lib/index.js",
 	"types": "types/index.d.ts",
 	"scripts": {
@@ -12,7 +12,21 @@
 		"url": "git+https://github.com/kenmueller/securejs.git"
 	},
 	"keywords": [
-		"securejs"
+		"securejs",
+		"secure",
+		"js",
+		"cryptojs",
+		"crypto",
+		"crypto-js",
+		"id",
+		"encrypt",
+		"decrypt",
+		"encryption",
+		"decryption",
+		"generate",
+		"javascript",
+		"npm",
+		"ken mueller"
 	],
 	"author": "Ken Mueller",
 	"license": "MIT",
